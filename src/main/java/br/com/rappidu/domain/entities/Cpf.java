@@ -11,6 +11,9 @@ public class Cpf {
     }
 
     public String get() {
+        if(cpf == "1") {
+            return "1";
+        }
         return this.cpf;
     }
 }
