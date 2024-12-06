@@ -1,31 +1,18 @@
 package br.com.rappidu.infra.persistence.entities;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Setter
 @Getter
-@Entity
-@Table(name = "CUSTOMERS")
+@Document(collection = "customers")
 public class CustomerEntity {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Long id;
-
-    @Column(name = "NAME", length = 50)
+    private String id;
     private String name;
-
-    @Column(name = "CPF", length = 11, unique = true)
     private String cpf;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CUSTOMER_ID")
-    private List<AddressEntity> addresses = new ArrayList<>();
 }

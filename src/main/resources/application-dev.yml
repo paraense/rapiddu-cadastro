@@ -1,10 +1,14 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:mydb
-    username: usuario
-    password: senha
-    driverClassName: org.h2.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: create
+  data:
+    mongodb:
+       port: 27017
+       database: rappidu
+       host: localhost
+       auto-index-creation: true
+
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.mongodb.driver: DEBUG
+

@@ -8,6 +8,7 @@ import br.com.rappidu.domain.entities.Customer;
 import br.com.rappidu.infra.controllers.dto.request.CustomerRequestDto;
 import br.com.rappidu.infra.controllers.dto.response.CustomerResponseDto;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 
+@Slf4j
 @RestController
 @RequestMapping("/customers")
 @ComponentScan(
@@ -36,6 +38,8 @@ public class CustomerController {
     @GetMapping("/{cpf}")
     public ResponseEntity<CustomerResponseDto> findByCpf(@PathVariable("cpf") String cpf)  {
         var document = new Cpf(cpf);
+
+        log.info("Buscando o usuário pelo cpf: "+ document);
 
         Customer response = findCustomerUseCase.findByCpf(document);
         CustomerResponseDto responseDto = mapper.toResponseDTO(response);

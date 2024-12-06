@@ -6,7 +6,7 @@ import br.com.rappidu.infra.controllers.dto.response.CustomerResponseDto;
 import br.com.rappidu.domain.entities.Customer;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring", uses = {AddressModelMapper.class})
+@Mapper(componentModel = "spring")
 public interface CustomerModelMapper {
     Customer toModel(CustomerRequestDto request);
     CustomerResponseDto toResponseDTO(Customer customer);
