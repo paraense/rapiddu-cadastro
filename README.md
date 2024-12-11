@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paraense_rapiddu-cadastro&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=paraense_rapiddu-cadastro)
+
 # Rappidu Cadastro
 Bem-vindo ao repositório da aplicação rappidu-cadastro. Este projeto é um sistema desenvolvido em Spring Boot, focado no gerenciamento de cadastros.
 
