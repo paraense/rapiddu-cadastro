@@ -14,7 +14,6 @@ jobs:
   sonarqube:
     runs-on: ubuntu-22.04
     steps:
-      - name: Compiler
       - uses: actions/checkout@v4
       
       - name: SonarCloud Analyze
